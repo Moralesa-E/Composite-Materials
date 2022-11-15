@@ -3,6 +3,8 @@ import numpy as np
 import Matrix
 import os
 
+
+#MP
 def ClearW(): # Limpiar pantalla en Linux, Mac o Windows
     try:
         os.system('cls')
