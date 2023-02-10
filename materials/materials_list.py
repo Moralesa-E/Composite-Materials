@@ -31,10 +31,10 @@ class MaterialsList:
             l.append(material.convert_to_pd())
         print(pd.concat(l, ignore_index=True))
 
-    def create_compound(self, id_f: int, id_m: int) -> Compound:
+    def create_compound(self, id_f: int, id_m: int, vf: float = None, vm: float = None, eclt: float = None, ectt: float = None, clhe: float = None, cthe: float = None) -> Compound:
         mf = self.materials_list[id_f]
-        namef, ef, nuf, gf = mf.extract_to_compound()
+        namef = mf.name
         mm = self.materials_list[id_m]
-        namem, em, num, gm = mm.extract_to_compound()
+        namem = mm.name
 
-        return Compound(name=f"{namef} / {namem}", ef=ef, em=em, nuf=nuf, num=num, gf=gf, gm=gm)
+        return Compound(name=f"{namef} / {namem}", fiber=mf, matrix=mm, vf=vf, vm=vm, eclt=eclt, ectt=ectt, clhe=clhe, cthe=cthe)
