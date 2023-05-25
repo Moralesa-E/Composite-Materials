@@ -34,5 +34,3 @@ if __name__=="__main__":
     lc1.add(c2)
 
     lc1.show_list()
-
-    #Just a test
