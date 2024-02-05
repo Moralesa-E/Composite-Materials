@@ -2,7 +2,6 @@ import numpy as np
 
 
 class MediumPlane:
-
     __e0x: float
     __e0y: float
     __g0xy: float
@@ -10,8 +9,9 @@ class MediumPlane:
     __ky: float
     __kxy: float
 
-    def __init__(self, e0x: float, e0y: float, g0xy: float, kx: float, ky: float, kxy: float) -> None:
-
+    def __init__(
+        self, e0x: float, e0y: float, g0xy: float, kx: float, ky: float, kxy: float
+    ) -> None:
         self.__e0x = e0x
         self.__e0y = e0y
         self.__g0xy = g0xy

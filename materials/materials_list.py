@@ -4,7 +4,6 @@ import pandas as pd
 
 
 class MaterialsList:
-
     materials_list: list[Material]
 
     def __init__(self) -> None:
@@ -31,10 +30,30 @@ class MaterialsList:
             l.append(material.convert_to_pd())
         print(pd.concat(l, ignore_index=True))
 
-    def create_compound(self, id_f: int, id_m: int, vf: float = None, vm: float = None, eclt: float = None, ectt: float = None, clhe: float = None, cthe: float = None) -> Compound:
+    def create_compound(
+        self,
+        id_f: int,
+        id_m: int,
+        vf: float = None,
+        vm: float = None,
+        eclt: float = None,
+        ectt: float = None,
+        clhe: float = None,
+        cthe: float = None,
+    ) -> Compound:
         mf = self.materials_list[id_f]
-        namef = mf.name
+        namef = mf.__name
         mm = self.materials_list[id_m]
-        namem = mm.name
+        namem = mm.__name
 
-        return Compound(name=f"{namef} / {namem}", fiber=mf, matrix=mm, vf=vf, vm=vm, eclt=eclt, ectt=ectt, clhe=clhe, cthe=cthe)
+        return Compound(
+            name=f"{namef} / {namem}",
+            fiber=mf,
+            matrix=mm,
+            vf=vf,
+            vm=vm,
+            eclt=eclt,
+            ectt=ectt,
+            clhe=clhe,
+            cthe=cthe,
+        )
