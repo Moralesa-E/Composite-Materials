@@ -2,7 +2,6 @@ import numpy as np
 
 
 class Stress:
-
     __sx: float
     __sy: float
     __txy: float
