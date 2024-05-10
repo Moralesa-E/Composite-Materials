@@ -25,10 +25,10 @@ if __name__ == "__main__":
         vf=0.5,
         vm=0.5,
     )
-    c1.calc_elast_const()
+    c1.calc_elastic_constants()
     c1.calc_sxy(theta=55)
     c2 = le1.create_compound(id_f=0, id_m=3, vf=0.5, vm=0.5)
-    c2.calc_elast_const()
+    c2.calc_elastic_constants()
 
     lc1 = ListofCompounds()
 

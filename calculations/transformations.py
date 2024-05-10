@@ -91,7 +91,7 @@ class Transformations:
         return slt
 
     @staticmethod
-    def slt_to_sxy(slt: np.array, theta: float) -> np.array:
+    def slt_to_sxy(slt: np.ndarray, theta: float) -> np.ndarray:
         return np.dot(np.dot(Transformations.d(theta), slt), Transformations.tp(theta))
 
     @staticmethod

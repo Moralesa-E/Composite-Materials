@@ -8,7 +8,7 @@ class Deformations:
         return np.dot(flexibility_matrix, stress_vector)
 
     @staticmethod
-    def by_dimentions_and_detal_dimentions(
-        dimentions: np.array, delta_dimentions: np.array
+    def by_dimensions_and_delta_dimensions(
+        dimensions: np.array, delta_dimensions: np.array
     ):
-        return delta_dimentions / dimentions
+        return delta_dimensions / dimensions
