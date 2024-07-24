@@ -1,7 +1,7 @@
-from calculations.elastic_constants import ElasticConstants
-from calculations.transformations import Transformations
-from materials.fiber import Fiber
-from materials.matrix import Matrix
+from composite_materials.calculations.elastic_constants import ElasticConstants
+from composite_materials.calculations.transformations import Transformations
+from composite_materials.materials.fiber import Fiber
+from composite_materials.materials.matrix import Matrix
 import pandas as pd
 import numpy as np
 
@@ -148,13 +148,13 @@ class Compound:
         return self.qlt
 
     def get_stl(self) -> np.ndarray:
-        return np.around(self.slt, decimals=NUMBER_OF_DECIMALS)
+        return self.slt
 
     def get_sxy(self):
         return self.sxy
 
     def transform_slt2sxy(self, theta: float) -> np.ndarray:
-        return np.around(
-            Transformations.slt_to_sxy(slt=self.slt, theta=theta),
-            decimals=NUMBER_OF_DECIMALS,
-        )
+        return Transformations.slt_to_sxy(slt=self.slt, theta=theta)
+
+    def transform_qlt2qxy(self, theta: float) -> np.ndarray:
+        return Transformations.qlt_to_qxy(qlt=self.qlt, theta=theta)

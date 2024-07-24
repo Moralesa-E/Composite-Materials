@@ -1,7 +1,7 @@
-from materials.compound import Compound
-from deformations.deformations import Deformations
-from forces.stress import Stress
-from deformations.delta_dimensions import DeltaDimensions
+from composite_materials.materials.compound import Compound
+from composite_materials.deformations.deformations import Deformations
+from composite_materials.forces.stress import Stress
+from composite_materials.deformations.delta_dimensions import DeltaDimensions
 
 import numpy as np
 
@@ -26,6 +26,10 @@ class Layer:
             flexibility_matrix = self.__composite.transform_slt2sxy(theta=fiber_angle)
         else:
             flexibility_matrix = self.__composite.get_sxy()
+
+        print("+=" * 50)
+        print(flexibility_matrix)
+        print("+=" * 50)
         return Deformations.get_deformation_vector(
             flexibility_matrix=flexibility_matrix, stress_vector=stress_vector
         )

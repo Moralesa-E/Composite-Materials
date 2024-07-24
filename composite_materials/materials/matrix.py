@@ -1,4 +1,4 @@
-from materials.material import Material
+from composite_materials.materials.material import Material
 
 
 class Matrix(Material):
